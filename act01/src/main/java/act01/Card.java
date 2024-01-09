@@ -15,17 +15,17 @@ public class Card {
   /**
    * String value that holds the suit of the card
    */
-  private String suit;
+  private final String suit;
 
   /**
    * String value that holds the rank of the card
    */
-  private String rank;
+  private final String rank;
 
   /**
    * int value that holds the point value.
    */
-  private int pointValue;
+  private final int pointValue;
 
 
   /**
@@ -40,6 +40,9 @@ public class Card {
    */
   public Card(String cardRank, String cardSuit, int cardPointValue) {
     // Implemented in Activity 01
+    rank = cardRank;
+    suit = cardSuit;
+    pointValue = cardPointValue;
   }
 
 
@@ -49,6 +52,7 @@ public class Card {
    */
   public String getSuit() {
     // Implemented in Activity 01
+    return suit;
   }
 
   /**
@@ -57,6 +61,7 @@ public class Card {
    */
   public String getRank() {
     // Implemented in Activity 01
+    return rank;
   }
 
   /**
@@ -65,6 +70,7 @@ public class Card {
    */
   public int getPointValue() {
     // Implemented in Activity 01
+    return pointValue;
   }
 
   /** Compare this card with the argument.
@@ -75,7 +81,10 @@ public class Card {
    */
   public boolean matches(Card otherCard) {
     // Implemented in Activity 01
-  }
+    if(otherCard.getPointValue() == pointValue && otherCard.getRank().equals(rank) && otherCard.getSuit().equals(suit))
+        return true;
+    return false;
+    }
 
   /**
    * Converts the rank, suit, and point value into a string in the format
