@@ -15,17 +15,17 @@ public class Card {
   /**
    * String value that holds the suit of the card
    */
-  private final String suit;
+  private String suit;
 
   /**
    * String value that holds the rank of the card
    */
-  private final String rank;
+  private String rank;
 
   /**
    * int value that holds the point value.
    */
-  private final int pointValue;
+  private int pointValue;
 
 
   /**
@@ -39,10 +39,10 @@ public class Card {
    *                  containing the point value of the card
    */
   public Card(String cardRank, String cardSuit, int cardPointValue) {
-    // Implemented in Activity 01
-    rank = cardRank;
-    suit = cardSuit;
-    pointValue = cardPointValue;
+      
+      this.rank = cardRank;
+      this.suit = cardSuit;
+      this.pointValue = cardPointValue;
   }
 
 
@@ -51,7 +51,6 @@ public class Card {
    * @return this <code>Card's</code> suit.
    */
   public String getSuit() {
-    // Implemented in Activity 01
     return suit;
   }
 
@@ -60,7 +59,6 @@ public class Card {
    * @return this <code>Card's</code> rank.
    */
   public String getRank() {
-    // Implemented in Activity 01
     return rank;
   }
 
@@ -69,7 +67,6 @@ public class Card {
    * @return this <code>Card's</code> point value.
    */
   public int getPointValue() {
-    // Implemented in Activity 01
     return pointValue;
   }
 
@@ -80,10 +77,7 @@ public class Card {
    *         false otherwise.
    */
   public boolean matches(Card otherCard) {
-    // Implemented in Activity 01
-    if(otherCard.getPointValue() == pointValue && otherCard.getRank().equals(rank) && otherCard.getSuit().equals(suit))
-        return true;
-    return false;
+    return this.rank.equals(otherCard.getRank()) && this.suit.equals(otherCard.getSuit()) && this.pointValue == otherCard.getPointValue();
     }
 
   /**
