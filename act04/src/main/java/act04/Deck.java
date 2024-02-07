@@ -71,7 +71,7 @@ public class Deck {
 	 */
 	public Card deal() {
 		if (isEmpty()) {
-			return null;
+                    return null;
 		}
 		size--;
 		Card c = cards.get(size);
@@ -83,16 +83,14 @@ public class Deck {
 	 * and reset the size to represent the entire deck.
 	 */
 	public void shuffle() {
-		int n = cards.size();
-                Random rand = new Random();
-                for (int k = n - 1; k >= 1; k--) {
-                    int r = rand.nextInt(k+1);
-                    
-                    Card temp = cards.get(k);
-
-                    cards.set(k, cards.get(r));
-                    cards.set(r, temp);
-                }
+            int n = cards.size();
+            for (int k=n-1; k>=1; k--) {
+              int r = (int)(Math.random()*(k+1));
+              Card temp = cards.get(r);
+              cards.set(r, cards.get(k));
+              cards.set(k, temp);
+            }
+            this.size = cards.size();
                 
 	}
 
